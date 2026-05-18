@@ -1,0 +1,6 @@
+{
+  "name": "Nexus AI",
+  "description": "AI chat application using advanced language models via NVIDIA NIM APIs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
