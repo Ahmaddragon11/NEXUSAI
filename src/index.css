@@ -42,6 +42,10 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
+  .glass-bubble {
+    @apply bg-white/5 border border-[--color-glass-border] shadow-md md:shadow-lg backdrop-blur-sm;
+  }
+  
   .neon-glow {
     @apply shadow-[0_0_20px_0_rgba(16,185,129,0.3)];
   }
@@ -57,4 +61,5 @@
 
 body {
   @apply bg-gray-950 text-gray-200 antialiased selection:bg-emerald-500/30 selection:text-emerald-200;
+  overscroll-behavior-y: none;
 }

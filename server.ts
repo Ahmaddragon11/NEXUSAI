@@ -78,6 +78,7 @@ async function startServer() {
         ? { chat_template_kwargs: { thinking: true, reasoning_effort: "low" } }
         : undefined;
 
+      // @ts-ignore - NVIDIA NIM specific parameter
       const completion = await client.chat.completions.create({
         model: model,
         messages: messages,

@@ -331,7 +331,7 @@ export default function App() {
             exit={{ x: -280 }}
             transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
             className={cn(
-              "fixed md:static inset-y-0 left-0 z-30 w-72 liquid-glass flex flex-col transition-transform transform border-r border-white/5",
+              "fixed md:static inset-y-0 left-0 z-30 w-72 glass-panel flex flex-col transition-transform transform border-r border-white/5",
               !sidebarOpen && "md:translate-x-0 -translate-x-full"
             )}
           >

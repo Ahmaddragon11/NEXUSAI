@@ -50,7 +50,7 @@ export function ChatMessage({ role, content, reasoning, isLast, onRegenerate }: 
         </div>
         
         <div className={cn("flex-1 space-y-3 md:space-y-4 min-w-0 max-w-[90%] md:max-w-[85%]", isUser ? "text-right" : "text-left")}>
-          <div className={cn("inline-block p-3.5 md:p-5 rounded-2xl md:rounded-[2rem] text-left", isUser ? "bg-white/10 backdrop-blur-none xs:backdrop-blur-sm md:backdrop-blur-lg border border-white/20 text-gray-200 rounded-tr-sm" : "liquid-glass rounded-tl-sm w-full")}>
+          <div className={cn("inline-block p-3.5 md:p-5 rounded-2xl md:rounded-[2rem] text-left", isUser ? "bg-white/10 border border-white/20 text-gray-200 rounded-tr-sm" : "glass-bubble rounded-tl-sm w-full")}>
             {!isUser && (
               <div className="flex items-center justify-between mb-4 border-b border-white/5 pb-3">
                 <span className="font-bold text-emerald-400 text-sm tracking-widest uppercase font-display">Nexus AI</span>
