@@ -36,21 +36,21 @@ export function ChatMessage({ role, content, reasoning, isLast, onRegenerate }: 
       <div className={cn("max-w-4xl mx-auto flex w-full gap-4 md:gap-6", isUser ? "flex-row-reverse" : "flex-row")}>
         <div className="flex-shrink-0 mt-1 relative">
           {isUser ? (
-            <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-xl backdrop-blur-sm relative z-10">
-              <User size={18} />
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-lg md:shadow-xl backdrop-blur-none sm:backdrop-blur-sm relative z-10">
+              <User size={18} className="w-4 h-4 md:w-[18px] md:h-[18px]" />
             </div>
           ) : (
             <>
               <div className="absolute inset-0 bg-emerald-500 blur-sm opacity-40 rounded-full"></div>
-              <div className="relative w-10 h-10 rounded-full bg-emerald-900 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)] z-10">
-                <Bot size={18} />
+              <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-full bg-emerald-900 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-md md:shadow-[0_0_15px_rgba(16,185,129,0.3)] z-10">
+                <Bot size={18} className="w-4 h-4 md:w-[18px] md:h-[18px]" />
               </div>
             </>
           )}
         </div>
         
-        <div className={cn("flex-1 space-y-4 min-w-0 max-w-[85%]", isUser ? "text-right" : "text-left")}>
-          <div className={cn("inline-block p-5 rounded-[2rem] text-left", isUser ? "bg-white/10 backdrop-blur-lg border border-white/20 text-gray-200 rounded-tr-sm" : "liquid-glass rounded-tl-sm w-full")}>
+        <div className={cn("flex-1 space-y-3 md:space-y-4 min-w-0 max-w-[90%] md:max-w-[85%]", isUser ? "text-right" : "text-left")}>
+          <div className={cn("inline-block p-3.5 md:p-5 rounded-2xl md:rounded-[2rem] text-left", isUser ? "bg-white/10 backdrop-blur-none xs:backdrop-blur-sm md:backdrop-blur-lg border border-white/20 text-gray-200 rounded-tr-sm" : "liquid-glass rounded-tl-sm w-full")}>
             {!isUser && (
               <div className="flex items-center justify-between mb-4 border-b border-white/5 pb-3">
                 <span className="font-bold text-emerald-400 text-sm tracking-widest uppercase font-display">Nexus AI</span>

@@ -65,8 +65,8 @@ export function CodeBlock({ language, code, props }: CodeBlockProps) {
   const isHtml = language?.toLowerCase() === 'html' || language?.toLowerCase() === 'xml';
 
   return (
-    <div className={cn("rounded-2xl overflow-hidden my-5 border bg-black/40 backdrop-blur-md border-white/10 shadow-2xl transition-all", isFullscreen && "fixed inset-2 md:inset-8 z-[100] m-0 flex flex-col shadow-2xl liquid-glass")}>
-      <div className="flex items-center justify-between px-5 py-3 bg-white/5 border-b border-white/10 text-gray-300 text-xs font-mono shrink-0 relative">
+    <div className={cn("rounded-2xl overflow-hidden my-3 md:my-5 border bg-black/40 backdrop-blur-sm md:backdrop-blur-md border-white/10 shadow-lg md:shadow-2xl transition-all", isFullscreen && "fixed inset-2 md:inset-8 z-[100] m-0 flex flex-col shadow-2xl liquid-glass")}>
+      <div className="flex items-center justify-between px-4 md:px-5 py-2 md:py-3 bg-white/5 border-b border-white/10 text-gray-300 text-xs font-mono shrink-0 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-30"></div>
         <div className="flex items-center gap-4 relative z-10">
           <span className="font-semibold text-emerald-400 tracking-wider uppercase">{language}</span>

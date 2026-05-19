@@ -306,8 +306,8 @@ export default function App() {
     <div className="flex h-screen bg-[#030712] overflow-hidden font-sans text-gray-200 relative selection:bg-emerald-500/30 selection:text-emerald-200">
       
       {/* Ambient Radial Blobs */}
-      <div className="absolute top-0 left-0 w-[50vw] h-[50vw] bg-emerald-600/20 ambient-blob -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-[60vw] h-[60vw] bg-cyan-600/20 ambient-blob translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 left-0 w-[50vw] h-[50vw] bg-emerald-600/20 ambient-blob -translate-x-1/2 -translate-y-1/2 hidden md:block" />
+      <div className="absolute bottom-0 right-0 w-[60vw] h-[60vw] bg-cyan-600/20 ambient-blob translate-x-1/3 translate-y-1/3 hidden md:block" />
       
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
@@ -453,16 +453,16 @@ export default function App() {
         {/* Chat Area */}
         <div className="flex-1 overflow-y-auto scroll-smooth custom-scrollbar pt-4">
           {messages.length === 0 ? (
-            <div className="h-full flex flex-col items-center justify-center text-center p-6 md:p-8 space-y-8">
+            <div className="h-full flex flex-col items-center justify-center text-center p-4 md:p-8 space-y-6 md:space-y-8">
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
-                className="relative group"
+                className="relative group mt-[-2rem] md:mt-0"
               >
-                <div className="absolute inset-0 bg-emerald-500 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
-                <div className="p-8 liquid-glass rounded-[2.5rem] relative flex items-center justify-center border-t-white/10 border-l-white/10 z-10">
-                  <Brain size={64} className="text-emerald-400 max-w-full drop-shadow-[0_0_15px_rgba(16,185,129,0.6)]" strokeWidth={1} />
+                <div className="absolute inset-0 bg-emerald-500 rounded-[2rem] md:rounded-[2.5rem] blur-lg md:blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+                <div className="p-6 md:p-8 liquid-glass rounded-[2rem] md:rounded-[2.5rem] relative flex items-center justify-center border-t-white/10 border-l-white/10 z-10">
+                  <Brain size={48} className="md:w-16 md:h-16 text-emerald-400 max-w-full drop-shadow-[0_0_15px_rgba(16,185,129,0.6)]" strokeWidth={1} />
                 </div>
               </motion.div>
               
@@ -470,12 +470,12 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
-                className="max-w-xl space-y-4"
+                className="max-w-xl space-y-3 md:space-y-4 px-2"
               >
-                <h2 className="text-3xl md:text-5xl font-bold font-display text-white tracking-tight leading-tight">
+                <h2 className="text-[1.75rem] leading-tight md:text-5xl font-bold font-display text-white tracking-tight">
                   Awaken the <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Nexus</span>
                 </h2>
-                <p className="text-sm md:text-lg text-gray-400">
+                <p className="text-[13px] md:text-lg text-gray-400 max-w-md mx-auto">
                   Harness the power of NVIDIA NIM AI models with advanced reasoning and context awareness.
                 </p>
               </motion.div>
@@ -484,7 +484,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full mt-8"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 max-w-2xl w-full mt-6 md:mt-8 px-2"
               >
                 {['Write a python script to scrape a website', 'Explain quantum computing simply', 'Help me debug this react component', 'Plan a 3-day trip to Tokyo'].map((s, i) => (
                   <motion.button 
@@ -561,7 +561,7 @@ export default function App() {
               </div>
             )}
             
-            <div className="relative flex items-end gap-2 liquid-glass rounded-3xl p-2 md:p-3 focus-within:ring-2 focus-within:ring-emerald-500/30 focus-within:border-emerald-500/50 transition-all">
+            <div className="relative flex items-end gap-1 md:gap-2 liquid-glass rounded-[1.5rem] md:rounded-3xl p-1.5 md:p-3 focus-within:ring-2 focus-within:ring-emerald-500/30 focus-within:border-emerald-500/50 transition-all">
               <input 
                 type="file" 
                 multiple 
@@ -573,15 +573,15 @@ export default function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => fileInputRef.current?.click()}
-                className="p-3 text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/10 rounded-2xl transition-colors flex-shrink-0"
+                className="p-2.5 md:p-3 text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/10 rounded-2xl transition-colors flex-shrink-0"
                 title="Attach Document"
               >
-                <Paperclip size={22} strokeWidth={2} />
+                <Paperclip size={20} className="md:w-[22px] md:h-[22px]" strokeWidth={2} />
               </motion.button>
               
               <textarea
                 ref={textareaRef}
-                className="flex-1 max-h-48 min-h-[56px] bg-transparent outline-none resize-none pt-4 pb-3 px-2 text-white placeholder:text-gray-500 text-base"
+                className="flex-1 max-h-48 min-h-[48px] md:min-h-[56px] bg-transparent outline-none resize-none pt-3 pb-2.5 md:pt-4 md:pb-3 px-1 md:px-2 text-white placeholder:text-gray-500 text-sm md:text-base leading-relaxed"
                 placeholder="Ask Nexus anything..."
                 value={input}
                 onChange={(e) => {
@@ -603,10 +603,10 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={stopGeneration} 
-                  className="p-3 bg-red-500/20 text-red-400 rounded-2xl hover:bg-red-500/30 border border-red-500/20 transition-all flex-shrink-0 shadow-[0_0_15px_rgba(239,68,68,0.2)] mb-1 mr-1 flex items-center justify-center group"
+                  className="p-2.5 md:p-3 bg-red-500/20 text-red-400 rounded-xl md:rounded-2xl hover:bg-red-500/30 border border-red-500/20 transition-all flex-shrink-0 shadow-sm md:shadow-[0_0_15px_rgba(239,68,68,0.2)] mb-0.5 md:mb-1 mr-0.5 md:mr-1 flex items-center justify-center group"
                   title="Stop generating"
                 >
-                  <Square size={20} fill="currentColor" className="group-hover:scale-90 transition-transform" />
+                  <Square size={18} fill="currentColor" className="md:w-5 md:h-5 group-hover:scale-90 transition-transform" />
                 </motion.button>
               ) : (
                 <motion.button 
@@ -614,9 +614,9 @@ export default function App() {
                   whileTap={{ scale: 0.95 }}
                   onClick={sendMessage} 
                   disabled={!input.trim() && attachedFiles.length === 0}
-                  className="p-3 bg-emerald-500 text-gray-900 rounded-2xl hover:bg-emerald-400 transition-all flex-shrink-0 disabled:opacity-30 disabled:bg-white/10 disabled:text-gray-500 shadow-[0_0_20px_rgba(16,185,129,0.4)] mb-1 mr-1 flex items-center justify-center group"
+                  className="p-2.5 md:p-3 bg-emerald-500 text-gray-900 rounded-xl md:rounded-2xl hover:bg-emerald-400 transition-all flex-shrink-0 disabled:opacity-30 disabled:bg-white/10 disabled:text-gray-500 shadow-md md:shadow-[0_0_20px_rgba(16,185,129,0.4)] mb-0.5 md:mb-1 mr-0.5 md:mr-1 flex items-center justify-center group"
                 >
-                  <Send size={20} strokeWidth={2.5} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <Send size={18} strokeWidth={2.5} className="md:w-5 md:h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </motion.button>
               )}
             </div>

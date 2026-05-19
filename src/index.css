@@ -35,11 +35,11 @@
   
   /* Liquid Glass Utilities */
   .liquid-glass {
-    @apply bg-[--color-glass-surface] backdrop-blur-2xl border border-[--color-glass-border] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-[--color-glass-surface] backdrop-blur-md md:backdrop-blur-2xl border border-[--color-glass-border] shadow-lg md:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
   
   .glass-panel {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
   .neon-glow {
